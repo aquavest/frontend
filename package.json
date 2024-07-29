@@ -1,7 +1,10 @@
 {
   "name": "web3-hub",
   "version": "0.1.0",
-  "private": true,
+  "description": "This application would be a web3-based hub for smart contracts development",
+  "author": "Septian Maulana",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +12,20 @@
     "lint": "next lint",
     "prepare": "husky"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tianbuyung/web3-hub.git"
+  },
+  "keywords": [
+    "Next.js",
+    "Web3",
+    "Blockchain",
+    "Smart Contract Development"
+  ],
+  "bugs": {
+    "url": "https://github.com/tianbuyung/web3-hub/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/web3-hub#readme",
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
