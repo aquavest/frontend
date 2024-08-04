@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "../styles/globals.css";
+import "@rainbow-me/rainbowkit/styles.css";
 import { ThemeProvider } from "@/contexts/theme-provider";
+import { Web3ModalProvider } from "@/contexts/web3-modal-provider";
+import { Header } from "@/components/shared/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Web3ModalProvider>
+            <Header />
+            {children}
+          </Web3ModalProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
