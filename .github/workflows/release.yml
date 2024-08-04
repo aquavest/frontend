@@ -12,6 +12,8 @@ jobs:
 
     env:
       HUSKY: 0
+      NEXT_PUBLIC_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_PROJECT_ID }}
+      NEXT_PUBLIC_ENABLE_TESTNETS: ${{ secrets.NEXT_PUBLIC_ENABLE_TESTNETS }}
 
     strategy:
       matrix:
