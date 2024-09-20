@@ -12,24 +12,22 @@ export function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="sticky top-0 z-50 bg-primary shadow-md">
+    <header className="sticky top-0 z-50 bg-primary-foreground shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <Fish className="h-8 w-8 text-primary-foreground" />
-            <span className="hidden md:flex text-xl font-bold text-primary-foreground">
-              AquaVest
-            </span>
+            <Fish className="h-8 w-8" />
+            <span className="hidden md:flex text-xl font-bold">AquaVest</span>
           </Link>
 
-          <nav className="hidden md:flex space-x-8 text-primary-foreground"></nav>
+          <nav className="hidden md:flex space-x-8"></nav>
 
           <div className="flex">
             <ModeToggle />
           </div>
 
           <button
-            className="md:hidden text-primary-foreground"
+            className="md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -44,31 +42,22 @@ export function Header() {
 
       {isMenuOpen && (
         <div className="md:hidden">
-          <nav className="flex flex-col space-y-4 px-4 py-6 bg-secondary">
+          <nav className="flex flex-col space-y-4 px-4 pb-6 bg-primary-foreground">
             <ul className="space-y-2">
               <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-secondary-foreground hover:underline"
-                >
+                <Link href="/about" className="text-sm hover:underline">
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="/docs"
-                  className="text-sm text-secondary-foreground hover:underline"
-                >
+                <Link href="/docs" className="text-sm hover:underline">
                   Documentation
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="/faq"
-                  className="text-sm text-secondary-foreground hover:underline"
-                >
+                <Link href="/faq" className="text-sm hover:underline">
                   FAQ
                 </Link>
               </li>

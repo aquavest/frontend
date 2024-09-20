@@ -3,12 +3,12 @@ import { LayoutGridIcon, BarChart3Icon, LayoutDashboard } from "lucide-react";
 
 export function Sidebar() {
   return (
-    <div className="w-64 bg-white shadow-md">
+    <div className="w-64 bg-primary-foreground shadow-md">
       <div className="p-6">
         <nav>
           <Link
             href="/dashboard"
-            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-gray-100"
+            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-primary/50"
           >
             <LayoutDashboard className="h-5 w-5" />
             <span>Dashboard</span>
@@ -16,7 +16,7 @@ export function Sidebar() {
 
           <Link
             href="/pools"
-            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-gray-100"
+            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-primary/50"
           >
             <LayoutGridIcon className="h-5 w-5" />
             <span>Available Pools</span>
@@ -24,7 +24,7 @@ export function Sidebar() {
 
           <Link
             href="/investments"
-            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-gray-100"
+            className="flex items-center space-x-2 w-full p-2 rounded hover:bg-primary/50"
           >
             <BarChart3Icon className="h-5 w-5" />
             <span>Your Investments</span>

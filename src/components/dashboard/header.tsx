@@ -6,13 +6,11 @@ import { Fish } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="bg-primary shadow-md">
+    <header className="bg-primary-foreground shadow-md">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Fish className="h-8 w-8 text-primary-foreground" />
-          <span className="hidden md:flex text-xl font-bold text-primary-foreground">
-            AquaVest
-          </span>
+          <Fish className="h-8 w-8" />
+          <span className="hidden md:flex text-xl font-bold">AquaVest</span>
         </Link>
 
         <div className="flex space-x-5">

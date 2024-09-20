@@ -7,7 +7,7 @@ export default function CoreLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <Web3ModalProvider>
-      <div className="flex flex-col h-screen bg-gray-100">
+      <div className="flex flex-col h-screen bg-primary-foreground">
         {/* Header */}
         <Header />
         <div className="flex flex-1 overflow-hidden">
