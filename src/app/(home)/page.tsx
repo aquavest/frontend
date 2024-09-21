@@ -31,9 +31,11 @@ export default function Home() {
 
             <p>Invest in sustainable fishing pools and earn USDC returns.</p>
 
-            <Button size="lg">
-              <Link href="/dashboard">Start Investing</Link>
-            </Button>
+            <div>
+              <Link href="/dashboard">
+                <Button size="lg">Start Investing</Button>
+              </Link>
+            </div>
           </div>
         </section>
 
