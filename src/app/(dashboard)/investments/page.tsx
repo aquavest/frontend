@@ -5,6 +5,8 @@ import usdcAbi from "../../../lib/usdc.json";
 import { useEffect, useState } from "react";
 import poolAbi from "../../../lib/pool.json";
 
+type PoolData = [bigint, bigint, bigint]; // Adjust types as needed
+
 export default function InvestmentsPage() {
   const { address } = useAccount();
   const [balance, setBalance] = useState("");
@@ -57,7 +59,7 @@ export default function InvestmentsPage() {
     address: "0x2cf8E3043Ce1127eFb57b752a4038f7735FF3b45",
     functionName: "pools",
     args: ["0"],
-  });
+  }) as { data: PoolData | undefined };
 
   useEffect(() => {
     if (pool.data) {
