@@ -1,3 +1,11 @@
+# [0.5.0](https://github.com/tianbuyung/web3-hub/compare/v0.4.0...v0.5.0) (2024-09-21)
+
+
+### Features
+
+* **dashboard:** add dashboard page ([d328797](https://github.com/tianbuyung/web3-hub/commit/d3287978550a7175ae4b76247cbb70acda29f306))
+* **landing-page:** add landing page ([b57fa86](https://github.com/tianbuyung/web3-hub/commit/b57fa86b7a8e258b3845dd57fde8979b964ba832))
+
 # [0.4.0](https://github.com/tianbuyung/web3-hub/compare/v0.3.0...v0.4.0) (2024-08-04)
 
 
