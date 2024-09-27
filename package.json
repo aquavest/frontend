@@ -1,7 +1,7 @@
 {
-  "name": "web3-hub",
-  "version": "0.1.0",
-  "description": "This application would be a web3-based hub for smart contracts development",
+  "name": "aquavest",
+  "version": "0.6.0",
+  "description": "The project is an innovative decentralized investment platform designed for users to invest in fishing pools. Through a user-friendly dApp, investors can connect their crypto wallets and choose fishing pools based on detailed fact sheets. Users can then deposit their USDC assets to purchase ownership in these pools, tracked via FISH tokens.",
   "author": "Septian Maulana",
   "private": false,
   "license": "MIT",
@@ -14,18 +14,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tianbuyung/web3-hub.git"
+    "url": "git@github.com:tianbuyung/aquavest.git"
   },
   "keywords": [
     "Next.js",
     "Web3",
     "Blockchain",
-    "Smart Contract Development"
+    "Smart Contracts",
+    "Investment",
+    "RWA"
   ],
   "bugs": {
-    "url": "https://github.com/tianbuyung/web3-hub/issues"
+    "url": "https://github.com/tianbuyung/aquavest/issues"
   },
-  "homepage": "https://github.com/tianbuyung/web3-hub#readme",
+  "homepage": "https://github.com/tianbuyung/aquavest#readme",
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",

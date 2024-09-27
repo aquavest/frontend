@@ -22,8 +22,9 @@ export function PurchaseTokens() {
   const [amount, setAmount] = useState("");
   const { address } = useAccount();
   const client = useClient();
-  const { writeContract } = useWriteContract();
-  const { data, error, isPending } = useReadContracts({
+  const { writeContractAsync, isPending: isPendingWriteContract } =
+    useWriteContract();
+  const { data, error, isPending, refetch } = useReadContracts({
     contracts: [
       {
         ...fishTokenContract,
@@ -66,54 +67,47 @@ export function PurchaseTokens() {
     setAmount(e.target.value);
   };
 
-  const approveTokens = () => {
-    writeContract(
-      {
+  const approveAndBuyTokens = async () => {
+    try {
+      const approveData = await writeContractAsync({
         ...usdcTokenContract,
         functionName: "approve",
         args: [
           investmentPoolsContract.address,
           parseUnits(amount, usdcDecimals?.result as number),
         ],
-      },
-      {
-        onSuccess: async (data) => {
-          const transactionReceipt = await waitForTransactionReceipt(client!, {
-            hash: data,
-          });
+      });
 
-          alert(
-            `Tokens approved tx hash: ${transactionReceipt.transactionHash}`,
-          );
+      const approveTransactionReceipt = await waitForTransactionReceipt(
+        client!,
+        {
+          hash: approveData,
         },
-        onError: (error) => alert(error.message),
-      },
-    );
-  };
+      );
 
-  const buyTokens = () => {
-    writeContract(
-      {
+      alert(
+        `Tokens approved tx hash: ${approveTransactionReceipt.transactionHash}`,
+      );
+
+      const buyData = await writeContractAsync({
         ...investmentPoolsContract,
         functionName: "purchaseTokens",
         args: [parseUnits(amount, usdcDecimals?.result as number)],
-      },
-      {
-        onSettled: () => {
-          setAmount("");
-        },
-        onSuccess: async (data) => {
-          const transactionReceipt = await waitForTransactionReceipt(client!, {
-            hash: data,
-          });
+      });
 
-          alert(
-            `Tokens purchased tx hash: ${transactionReceipt.transactionHash}`,
-          );
-        },
-        onError: (error) => alert(error.message),
-      },
-    );
+      const buyTransactionReceipt = await waitForTransactionReceipt(client!, {
+        hash: buyData,
+      });
+
+      alert(
+        `Tokens purchased tx hash: ${buyTransactionReceipt.transactionHash}`,
+      );
+    } catch (error: any) {
+      alert(error.message);
+    } finally {
+      refetch();
+      setAmount("");
+    }
   };
 
   if (isPending) return <p>Loading...</p>;
@@ -122,7 +116,7 @@ export function PurchaseTokens() {
     return <p>Error: {(error as BaseError).shortMessage || error.message}</p>;
 
   return (
-    <>
+    <div className="mt-5">
       <div className="flex items-center justify-between">
         <span>Balances:</span>
         <span className="font-bold">{`${formatUnits(
@@ -148,13 +142,14 @@ export function PurchaseTokens() {
           value={amount}
         />
 
-        <div className="grid w-full grid-cols-2 space-x-4">
-          <Button onClick={approveTokens}>Approve Tokens</Button>
-          <Button onClick={buyTokens} variant="secondary">
-            Buy Tokens
-          </Button>
-        </div>
+        <Button
+          className="w-full"
+          disabled={isPendingWriteContract}
+          onClick={approveAndBuyTokens}
+        >
+          Buy Tokens
+        </Button>
       </div>
-    </>
+    </div>
   );
 }
