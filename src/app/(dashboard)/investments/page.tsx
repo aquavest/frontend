@@ -23,7 +23,7 @@ const investments = [
 
 export default function InvestmentsPage() {
   return (
-    <>
+    <main>
       <h2 className="text-2xl font-semibold mb-4">Your Investments</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {investments.map((investment) => (
@@ -49,6 +49,6 @@ export default function InvestmentsPage() {
           </Card>
         ))}
       </div>
-    </>
+    </main>
   );
 }

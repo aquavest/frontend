@@ -9,15 +9,17 @@ import { TabsMenu } from "@/components/assets/tabs-menu";
 
 export default function AssetsPage() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Token Management</CardTitle>
-        <CardDescription>Purchase or return your token</CardDescription>
-      </CardHeader>
+    <main>
+      <Card>
+        <CardHeader>
+          <CardTitle>Token Management</CardTitle>
+          <CardDescription>Purchase or return your token</CardDescription>
+        </CardHeader>
 
-      <CardContent>
-        <TabsMenu />
-      </CardContent>
-    </Card>
+        <CardContent>
+          <TabsMenu />
+        </CardContent>
+      </Card>
+    </main>
   );
 }
