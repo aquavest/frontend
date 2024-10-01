@@ -2,15 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreatePool } from "@/components/pools/create-pool";
 import { PoolDetails } from "@/components/pools/pool-details";
 
-interface Pool {
-  id: number;
-  name: string;
-  targetHarvest: string;
-  location: string;
-  expectedROI: string;
-  daysRemaining: number;
-}
-
 // Mock data
 const pools = [
   {
@@ -36,6 +27,30 @@ const pools = [
     location: "Greece",
     expectedROI: "10%",
     daysRemaining: 15,
+  },
+  {
+    id: 4,
+    name: "Indian Ocean Prawns",
+    targetHarvest: "12,000 kg",
+    location: "India",
+    expectedROI: "13%",
+    daysRemaining: 8,
+  },
+  {
+    id: 5,
+    name: "Caribbean Lobsters",
+    targetHarvest: "5,000 kg",
+    location: "Bahamas",
+    expectedROI: "18%",
+    daysRemaining: 7,
+  },
+  {
+    id: 6,
+    name: "Alaskan King Crab",
+    targetHarvest: "6,500 kg",
+    location: "Alaska",
+    expectedROI: "20%",
+    daysRemaining: 12,
   },
 ];
 
