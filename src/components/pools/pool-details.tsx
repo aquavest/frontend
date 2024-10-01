@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useClient, useReadContracts, useWriteContract } from "wagmi";
+import { waitForTransactionReceipt } from "viem/actions";
 
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
@@ -20,7 +21,7 @@ import {
   investmentPoolsContract,
   usdcTokenContract,
 } from "@/assets";
-import { formatUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 
 interface Pool {
   id: number;
@@ -44,7 +45,7 @@ export function PoolDetails({ pool }: PoolDetailsProps) {
   const client = useClient();
   const { writeContractAsync, isPending: isPendingWriteContract } =
     useWriteContract();
-  const { data } = useReadContracts({
+  const { data, refetch } = useReadContracts({
     contracts: [
       {
         ...investmentPoolsContract,
@@ -72,12 +73,55 @@ export function PoolDetails({ pool }: PoolDetailsProps) {
     }
   };
 
-  const handleInvest = () => {
-    // Implement investment logic here
-    console.log(`Investing ${investmentAmount} USDC in ${selectedPool?.name}`);
-    setSelectedPool(undefined);
-    setInvestmentAmount("");
-    setIsRiskAcknowledged(false);
+  const handleInvest = async () => {
+    try {
+      const approveData = await writeContractAsync({
+        ...fishTokenContract,
+        functionName: "approve",
+        args: [
+          investmentPoolsContract.address,
+          parseUnits(investmentAmount, fishDecimals?.result as number),
+        ],
+      });
+
+      const approveTransactionReceipt = await waitForTransactionReceipt(
+        client!,
+        {
+          hash: approveData,
+        },
+      );
+
+      alert(
+        `Tokens approved tx hash: ${approveTransactionReceipt.transactionHash}`,
+      );
+
+      const createPoolData = await writeContractAsync({
+        ...investmentPoolsContract,
+        functionName: "userDeposit",
+        args: [
+          BigInt((selectedPool?.id || 1) - 1),
+          parseUnits(investmentAmount, fishDecimals?.result as number),
+        ],
+      });
+
+      const createPoolDataTransactionReceipt = await waitForTransactionReceipt(
+        client!,
+        {
+          hash: createPoolData,
+        },
+      );
+
+      alert(
+        `Pool created successfully! Transaction hash: ${createPoolDataTransactionReceipt.transactionHash}`,
+      );
+    } catch (error: any) {
+      alert(error.message);
+    } finally {
+      refetch();
+      setSelectedPool(undefined);
+      setInvestmentAmount("");
+      setIsRiskAcknowledged(false);
+    }
   };
 
   return (
@@ -127,7 +171,7 @@ export function PoolDetails({ pool }: PoolDetailsProps) {
             </p>
 
             <div className="space-y-2">
-              <Label htmlFor="investmentAmount">Investment Amount (USDC)</Label>
+              <Label htmlFor="investmentAmount">Investment Amount (FISH)</Label>
               <Input
                 id="investmentAmount"
                 type="number"
@@ -154,7 +198,9 @@ export function PoolDetails({ pool }: PoolDetailsProps) {
 
         <Button
           onClick={handleInvest}
-          disabled={!isRiskAcknowledged || !investmentAmount}
+          disabled={
+            !isRiskAcknowledged || !investmentAmount || isPendingWriteContract
+          }
         >
           Invest Now
         </Button>
