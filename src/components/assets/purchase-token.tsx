@@ -8,6 +8,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { formatUnits, parseUnits, type BaseError } from "viem";
+import { waitForTransactionReceipt } from "viem/actions";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +17,6 @@ import {
   investmentPoolsContract,
   usdcTokenContract,
 } from "@/assets";
-import { waitForTransactionReceipt } from "viem/actions";
 
 export function PurchaseTokens() {
   const [amount, setAmount] = useState("");
