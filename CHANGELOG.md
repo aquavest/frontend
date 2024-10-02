@@ -1,3 +1,22 @@
+# [0.7.0](https://github.com/tianbuyung/aquavest/compare/v0.6.0...v0.7.0) (2024-09-27)
+
+
+### Features
+
+* **assets:** change write contract into async ([ec67c29](https://github.com/tianbuyung/aquavest/commit/ec67c296b2edc155c17e4b8584e83174902e43a7))
+
+# [0.6.0](https://github.com/tianbuyung/aquavest/compare/v0.5.0...v0.6.0) (2024-09-26)
+
+
+### Bug Fixes
+
+* **package:** update the package with new repo name ([77fb060](https://github.com/tianbuyung/aquavest/commit/77fb0604605a4af3bc32a82fdf9ea79bbe0a1232))
+
+
+### Features
+
+* **assets:** add assests page ([1675d36](https://github.com/tianbuyung/aquavest/commit/1675d364a0afb1072b5d52f5d8e052e51da60034))
+
 # [0.5.0](https://github.com/tianbuyung/web3-hub/compare/v0.4.0...v0.5.0) (2024-09-21)
 
 
