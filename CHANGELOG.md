@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/tianbuyung/aquavest/compare/v0.7.0...v0.8.0) (2024-10-02)
+
+
+### Features
+
+* **pools:** add blockchain data for pool details ([9747a59](https://github.com/tianbuyung/aquavest/commit/9747a59cb9b45ec58b5d87d3dda6c4a5617d098c))
+* **pools:** add investment function ([55b4e8f](https://github.com/tianbuyung/aquavest/commit/55b4e8fb72304e34ace19bbed3041dd66081ea6f))
+* **pools:** modified pools page ([720f985](https://github.com/tianbuyung/aquavest/commit/720f985dea6287a792129a8cfc48ca302e63032e))
+
 # [0.7.0](https://github.com/tianbuyung/aquavest/compare/v0.6.0...v0.7.0) (2024-09-27)
 
 
