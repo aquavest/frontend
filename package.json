@@ -1,6 +1,6 @@
 {
   "name": "aquavest",
-  "version": "0.6.0",
+  "version": "0.9.0",
   "description": "The project is an innovative decentralized investment platform designed for users to invest in fishing pools. Through a user-friendly dApp, investors can connect their crypto wallets and choose fishing pools based on detailed fact sheets. Users can then deposit their USDC assets to purchase ownership in these pools, tracked via FISH tokens.",
   "author": "Septian Maulana",
   "private": false,
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tianbuyung/aquavest.git"
+    "url": "git@github.com:aquavest/frontend.git"
   },
   "keywords": [
     "Next.js",
@@ -25,9 +25,9 @@
     "RWA"
   ],
   "bugs": {
-    "url": "https://github.com/tianbuyung/aquavest/issues"
+    "url": "https://github.com/aquavest/frontend/issues"
   },
-  "homepage": "https://github.com/tianbuyung/aquavest#readme",
+  "homepage": "https://github.com/aquavest/frontend#readme",
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
