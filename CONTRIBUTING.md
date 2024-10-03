@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-Thank you for your interest in contributing to **web3-hub**! We appreciate your help in improving this project. Please follow these guidelines to contribute effectively.
+Thank you for your interest in contributing to **AquaVest Frontend**! We appreciate your help in improving this project. Please follow these guidelines to contribute effectively.
 
 ## How to Contribute
 
@@ -28,8 +28,8 @@ To submit a pull request:
 1. **Fork the Repository**: Create a fork of this repository on GitHub.
 2. **Clone the Fork**: Clone your fork to your local machine.
    ```sh
-   git clone https://github.com/your-username/web3-hub.git
-   cd web3-hub
+   git clone https://github.com/your-username/frontend.git
+   cd frontend
    ```
 3. **Create a Branch**: Create a new branch for your changes.
    ```sh
@@ -63,7 +63,7 @@ Make sure your changes are well-tested:
 
 ### License
 
-By contributing to this project, you agree that your contributions will be licensed under the MIT License.
+By contributing to this project, you agree that your contributions will be licensed under the [MIT License](LICENSE).
 
 ## Contact
 

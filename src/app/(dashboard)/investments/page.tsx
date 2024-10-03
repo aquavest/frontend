@@ -22,6 +22,7 @@ const investments = [
 ];
 
 export default function InvestmentsPage() {
+  // TODO: Fetch investments from the blockchain
   return (
     <main>
       <h2 className="text-2xl font-semibold mb-4">Your Investments</h2>
