@@ -1,23 +1,10 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import {
-  avalanche,
-  avalancheFuji,
-  mainnet,
-  sepolia,
-  polygon,
-  polygonMumbai,
-} from "wagmi/chains";
+
+import { neoXT4 } from "./neox.chain";
 
 export const config = getDefaultConfig({
   appName: "Vault-App",
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID || "",
-  chains: [
-    avalanche,
-    mainnet,
-    polygon,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
-      ? [avalancheFuji, sepolia, polygonMumbai]
-      : []),
-  ],
+  chains: [neoXT4],
   ssr: true,
 });

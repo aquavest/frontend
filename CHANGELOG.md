@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/aquavest/frontend/compare/v0.8.0...v0.9.0) (2024-10-03)
+
+
+### Features
+
+* **investments:** add todo to fetch investments from blockchain ([11c87df](https://github.com/aquavest/frontend/commit/11c87df55eba578eb9c088d3cba24a8b6053591b))
+
 # [0.8.0](https://github.com/tianbuyung/aquavest/compare/v0.7.0...v0.8.0) (2024-10-02)
 
 
