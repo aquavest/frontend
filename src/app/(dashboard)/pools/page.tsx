@@ -1,82 +1,56 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useReadContracts } from "wagmi";
+
 import { CreatePool } from "@/components/pools/create-pool";
 import { PoolDetails } from "@/components/pools/pool-details";
+import { investmentPoolsContract } from "@/assets";
+import { pools } from "@/lib/mocks/pools";
 
-// Mock data
-const pools = [
-  {
-    id: 1,
-    name: "Atlantic Salmon",
-    targetHarvest: "10,000 kg",
-    location: "Norway",
-    expectedROI: "12%",
-    daysRemaining: 10,
-  },
-  {
-    id: 2,
-    name: "Pacific Tuna",
-    targetHarvest: "15,000 kg",
-    location: "Japan",
-    expectedROI: "15%",
-    daysRemaining: 5,
-  },
-  {
-    id: 3,
-    name: "Mediterranean Sea Bass",
-    targetHarvest: "8,000 kg",
-    location: "Greece",
-    expectedROI: "10%",
-    daysRemaining: 15,
-  },
-  {
-    id: 4,
-    name: "Indian Ocean Prawns",
-    targetHarvest: "12,000 kg",
-    location: "India",
-    expectedROI: "13%",
-    daysRemaining: 8,
-  },
-  {
-    id: 5,
-    name: "Caribbean Lobsters",
-    targetHarvest: "5,000 kg",
-    location: "Bahamas",
-    expectedROI: "18%",
-    daysRemaining: 7,
-  },
-  {
-    id: 6,
-    name: "Alaskan King Crab",
-    targetHarvest: "6,500 kg",
-    location: "Alaska",
-    expectedROI: "20%",
-    daysRemaining: 12,
-  },
-];
+const contracts = pools.map((pool) => ({
+  ...investmentPoolsContract,
+  functionName: "pools",
+  args: [BigInt((pool.id || 1) - 1)],
+}));
+
+type Result = {
+  error?: undefined;
+  result: unknown;
+  status: "success";
+  id?: number;
+};
 
 export default function PoolsPage() {
+  const [poolsData, setPoolsData] = useState<Pool[]>([]);
+  const { data } = useReadContracts({
+    contracts: contracts as any,
+  });
+
+  useEffect(() => {
+    const dataWithId = data?.map((result, index) => {
+      const res = result as Result;
+      res.id = index;
+      return res;
+    });
+    const filterIds = dataWithId?.filter((result) => {
+      return (result.result as any)[2] !== BigInt("0");
+    });
+    const newPools = filterIds?.map((result) => {
+      return pools.filter((pool) => pool.id - 1 === result.id)[0];
+    });
+
+    setPoolsData(newPools || []);
+  }, [data]);
+
   return (
     <main>
       <h2 className="text-2xl font-semibold mb-4">Available Fishing Pools</h2>
       <CreatePool />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {pools.map((pool) => (
-          <Card key={pool.id}>
-            <CardHeader>
-              <CardTitle>{pool.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Target Harvest: {pool.targetHarvest}</p>
-              <p>Location: {pool.location}</p>
-              <p>Expected ROI: {pool.expectedROI}</p>
-              <p className="mb-4">
-                Open for deposits: {pool.daysRemaining} days remaining
-              </p>
-
-              <PoolDetails pool={pool} />
-            </CardContent>
-          </Card>
+        {poolsData.map((pool) => (
+          <PoolDetails pool={pool} key={pool.id} />
         ))}
       </div>
     </main>

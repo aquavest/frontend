@@ -22,6 +22,7 @@ import {
   usdcTokenContract,
 } from "@/assets";
 import { formatUnits, parseUnits } from "viem";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 interface Pool {
   id: number;
@@ -125,86 +126,107 @@ export function PoolDetails({ pool }: PoolDetailsProps) {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button onClick={() => setSelectedPool(pool)}>View Pool Details</Button>
-      </DialogTrigger>
+    <Card key={pool.id}>
+      <CardHeader>
+        <CardTitle>{pool.name}</CardTitle>
+      </CardHeader>
 
-      <DialogContent className="max-w-3xl">
-        <DialogHeader>
-          <DialogTitle>{pool.name} - Pool Details</DialogTitle>
+      <CardContent>
+        <p>Target Harvest: {pool.targetHarvest}</p>
+        <p>Location: {pool.location}</p>
+        <p>Expected ROI: {pool.expectedROI}</p>
+        <p className="mb-4">
+          Open for deposits: {pool.daysRemaining} days remaining
+        </p>
 
-          <DialogDescription>
-            Please review the details below before making an investment.
-          </DialogDescription>
-        </DialogHeader>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button onClick={() => setSelectedPool(pool)}>
+              View Pool Details
+            </Button>
+          </DialogTrigger>
 
-        <div className="grid gap-4 py-4">
-          <p>Target Harvest: {pool.targetHarvest}</p>
-          <p>Location: {pool.location}</p>
-          <p>Expected ROI: {pool.expectedROI}</p>
-          <p>Risk Factors: Market volatility, environmental conditions</p>
-          <p>Farmer Background: 10+ years in aquaculture</p>
+          <DialogContent className="max-w-3xl">
+            <DialogHeader>
+              <DialogTitle>{pool.name} - Pool Details</DialogTitle>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Investment Summary</h3>
-            <p>
-              FISH Token Goal:{" "}
-              {formatUnits(
-                (result?.[2] as bigint) || BigInt(0),
-                fishDecimals?.result as number,
-              )}
-            </p>
-            <p>
-              Investment Amount (USDC):{" "}
-              {formatUnits(
-                (result?.[1] as bigint) || BigInt(0),
-                usdcDecimals?.result as number,
-              )}
-            </p>
-            <p>
-              Ownership Allocation (FISH):{" "}
-              {formatUnits(
-                (result?.[0] as bigint) || BigInt(0),
-                fishDecimals?.result as number,
-              )}
-            </p>
+              <DialogDescription>
+                Please review the details below before making an investment.
+              </DialogDescription>
+            </DialogHeader>
 
-            <div className="space-y-2">
-              <Label htmlFor="investmentAmount">Investment Amount (FISH)</Label>
-              <Input
-                id="investmentAmount"
-                type="number"
-                value={investmentAmount}
-                onChange={(e) => setInvestmentAmount(e.target.value)}
-              />
+            <div className="grid gap-4 py-4">
+              <p>Target Harvest: {pool.targetHarvest}</p>
+              <p>Location: {pool.location}</p>
+              <p>Expected ROI: {pool.expectedROI}</p>
+              <p>Risk Factors: Market volatility, environmental conditions</p>
+              <p>Farmer Background: 10+ years in aquaculture</p>
+
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Investment Summary</h3>
+                <p>
+                  FISH Token Goal:{" "}
+                  {formatUnits(
+                    (result?.[2] as bigint) || BigInt(0),
+                    fishDecimals?.result as number,
+                  )}
+                </p>
+                <p>
+                  Investment Amount (USDC):{" "}
+                  {formatUnits(
+                    (result?.[1] as bigint) || BigInt(0),
+                    usdcDecimals?.result as number,
+                  )}
+                </p>
+                <p>
+                  Ownership Allocation (FISH):{" "}
+                  {formatUnits(
+                    (result?.[0] as bigint) || BigInt(0),
+                    fishDecimals?.result as number,
+                  )}
+                </p>
+
+                <div className="space-y-2">
+                  <Label htmlFor="investmentAmount">
+                    Investment Amount (FISH)
+                  </Label>
+                  <Input
+                    id="investmentAmount"
+                    type="number"
+                    value={investmentAmount}
+                    onChange={(e) => setInvestmentAmount(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="riskAcknowledgement"
+                  checked={isRiskAcknowledged}
+                  onCheckedChange={handleCheckedChange}
+                />
+
+                <label
+                  htmlFor="riskAcknowledgement"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  I acknowledge the risks associated with this investment
+                </label>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="riskAcknowledgement"
-              checked={isRiskAcknowledged}
-              onCheckedChange={handleCheckedChange}
-            />
 
-            <label
-              htmlFor="riskAcknowledgement"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            <Button
+              onClick={handleInvest}
+              disabled={
+                !isRiskAcknowledged ||
+                !investmentAmount ||
+                isPendingWriteContract
+              }
             >
-              I acknowledge the risks associated with this investment
-            </label>
-          </div>
-        </div>
-
-        <Button
-          onClick={handleInvest}
-          disabled={
-            !isRiskAcknowledged || !investmentAmount || isPendingWriteContract
-          }
-        >
-          Invest Now
-        </Button>
-      </DialogContent>
-    </Dialog>
+              Invest Now
+            </Button>
+          </DialogContent>
+        </Dialog>
+      </CardContent>
+    </Card>
   );
 }

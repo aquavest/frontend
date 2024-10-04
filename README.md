@@ -16,9 +16,9 @@
 
 ## Description
 
-AquaVest is a decentralized investment platform designed to provide crypto investors with access to real-world, sustainable ventures like fish farming. It offers a seamless experience for users looking to diversify their investment portfolios through tokenized ownership in fish farming pools.
+AquaVest is a decentralized investment platform designed to provide crypto investors with access to real-world, sustainable ventures like fish farming. Inspired by the struggles of a friend, a fish farmer in my hometown who faced difficulties securing capital, AquaVest opens new opportunities for investors to participate in sectors such as aquaculture.
 
-Through AquaVest’s user-friendly dApp, investors can easily connect their crypto wallets, select fish farming pools based on comprehensive fact sheets, and invest using USDC. The platform tokenizes ownership using FISH tokens, which represent a stake in these real-world fish farming assets. As the fish farms generate profits, investors earn returns proportionally to their ownership.
+Through AquaVest’s user-friendly dApp, investors can connect their crypto wallets, select fish farming pools based on detailed fact sheets, and invest using USDC. The platform tokenizes ownership using FISH tokens, which represent a stake in these real-world fish farming assets. As the fish farms generate profits, investors earn returns proportionally to their ownership. This profit-sharing mechanism benefits both the investors and the fish pond owners.
 
 ### Who is it for?
 
@@ -33,14 +33,15 @@ AquaVest is designed for:
 AquaVest addresses two primary challenges:
 
 1. **Limited Access to Real-World Asset Investment**: For most crypto investors, real-world assets like fish farming are typically out of reach due to logistical, legal, and financial barriers. AquaVest removes these obstacles by offering tokenized ownership, making it easier for investors to participate.
-2. **Capital Shortages in Aquaculture**: Fish farmers and aquaculture entrepreneurs often face challenges in securing funding for growth. AquaVest helps bridge the gap by providing an innovative way to attract investment without relying on traditional finance.
+2. **Capital Shortages in Aquaculture**: Fish farmers, like my friend, often face challenges in securing funding for growth. AquaVest helps bridge the gap by providing an innovative way to attract investment without relying on traditional finance.
 
 With its blockchain-backed system, AquaVest ensures transparency, security, and liquidity, offering a trustworthy investment platform in the expanding world of decentralized finance (DeFi).
 
 ### Why These Changes Work:
 
-1. **Target Audience**: By specifying that AquaVest is for crypto investors, sustainable investors, and aquaculture entrepreneurs, you're making it clear who would benefit from the platform.
-2. **Problem-Solving Focus**: Explaining the problem (limited access to real-world asset investment and capital shortages) demonstrates why the platform exists and how it uniquely addresses these challenges, which adds value to potential users and contributors.
+1. **Personal Backstory**: Adding a personal story highlights the real-world need for the platform, making the problem more relatable and credible to potential investors.
+2. **Target Audience**: By specifying that AquaVest is for crypto investors, sustainable investors, and aquaculture entrepreneurs, you're making it clear who would benefit from the platform.
+3. **Problem-Solving Focus**: Explaining the problem (limited access to real-world asset investment and capital shortages) demonstrates why the platform exists and how it uniquely addresses these challenges, which adds value to potential users and contributors.
 
 ## Website
 
