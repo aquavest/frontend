@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/aquavest/frontend/compare/v0.10.0...v0.11.0) (2024-10-04)
+
+
+### Features
+
+* **investments:** fetch blockchain data and integrate with mock data ([1cfa58b](https://github.com/aquavest/frontend/commit/1cfa58b031fc8e53bff8c1833ccf1c0e37bf15f8))
+
 # [0.10.0](https://github.com/aquavest/frontend/compare/v0.9.0...v0.10.0) (2024-10-03)
 
 
