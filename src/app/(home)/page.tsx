@@ -1,4 +1,11 @@
-import { Wallet, Fish, DollarSign, BarChart3 } from "lucide-react";
+import {
+  Wallet,
+  Fish,
+  DollarSign,
+  BarChart3,
+  CheckCircle2,
+  CircleDot,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -100,6 +107,108 @@ export default function Home() {
                 title="Earn Returns"
                 icon={<DollarSign className="h-16 w-16" />}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Development Roadmap */}
+        <section className="py-16 bg-gradient-to-b from-blue-50 to-white dark:text-secondary">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Our Development Roadmap
+            </h2>
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"></div>
+
+              {/* Q4 2024 */}
+              <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                <div className="order-1 w-5/12 hidden md:block"></div>
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                  <h3 className="mx-auto font-semibold text-sm text-white">
+                    Q4
+                  </h3>
+                </div>
+                <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2024</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Smart Contract Deployment on Neo X</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Platform Launch v0</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Security Audits</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>User Dashboard</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Q1 2025 */}
+              <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                <div className="order-1 w-5/12 hidden md:block"></div>
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                  <h3 className="mx-auto font-semibold text-sm text-white">
+                    Q1
+                  </h3>
+                </div>
+                <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2025</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>The Graph Integration</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Oracle Integration</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Platform Launch v1/Mainnet</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Q2 2025 */}
+              <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                <div className="order-1 w-5/12 hidden md:block"></div>
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                  <h3 className="mx-auto font-semibold text-sm text-white">
+                    Q2
+                  </h3>
+                </div>
+                <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2025</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Secondary Market Launch</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Platform Launch v2</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Market Data Visualization</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Mini-Game App Development</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
