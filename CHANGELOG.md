@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/aquavest/frontend/compare/v0.9.0...v0.10.0) (2024-10-03)
+
+
+### Features
+
+* **integration:** integration with neox testnet network ([fca7c45](https://github.com/aquavest/frontend/commit/fca7c455b014a857e2402be0ace22d2310923f1f))
+
 # [0.9.0](https://github.com/aquavest/frontend/compare/v0.8.0...v0.9.0) (2024-10-03)
 
 
