@@ -1,5 +1,5 @@
 import { Wallet, Fish, DollarSign, BarChart3 } from "lucide-react";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -16,15 +16,16 @@ export default function Home() {
       <main className="flex flex-col min-h-screen">
         {/* Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center">
-          {/* <Image
-            src=""
+          <Image
+            src="/images/hero.png"
             alt="Serene aquaculture scene"
             className="absolute inset-0 w-full h-full object-cover"
             width={1920}
             height={1080}
-          /> */}
-          <div className="absolute inset-0 bg-black dark:bg-white bg-opacity-50" />
-          <div className="relative z-10 text-center text-primary-foreground space-y-6">
+            priority
+          />
+          <div className="absolute inset-0 bg-opacity-50" />
+          <div className="relative z-10 text-center text-white space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold">
               Aquaculture meets Blockchain
             </h1>
