@@ -1,3 +1,10 @@
+# [0.12.0](https://github.com/aquavest/frontend/compare/v0.11.0...v0.12.0) (2024-10-04)
+
+
+### Features
+
+* **landing-page:** add roadmap section ([fc33ea0](https://github.com/aquavest/frontend/commit/fc33ea013560fc24e0397cbb3f3b5f3ba70d02ae))
+
 # [0.11.0](https://github.com/aquavest/frontend/compare/v0.10.0...v0.11.0) (2024-10-04)
 
 
