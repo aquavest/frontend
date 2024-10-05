@@ -18,7 +18,7 @@ type Result = {
 
 export default function InvestmentsPage() {
   const [poolInvestments, setPoolInvestments] = useState<Pool[]>([]);
-  const { address } = useAccount();
+  const { address, isDisconnected } = useAccount();
   const contracts = pools.map((pool) => ({
     ...investmentPoolsContract,
     functionName: "userFishBalance",
@@ -39,23 +39,27 @@ export default function InvestmentsPage() {
   });
 
   useEffect(() => {
-    const dataWithId = data?.map((result, index) => {
-      const res = result as Result;
-      res.id = index;
-      return res;
-    });
-    const filterIds = dataWithId?.filter((result) => {
-      return (result.result as any) !== BigInt("0");
-    });
-    const newPools = filterIds?.map((result) => {
-      return pools.filter((pool) => {
-        pool.amount = result.result as bigint;
-        return pool.id - 1 === result.id;
-      })[0];
-    });
+    if (!isDisconnected) {
+      const dataWithId = data?.map((result, index) => {
+        const res = result as Result;
+        res.id = index;
+        return res;
+      });
+      const filterIds = dataWithId?.filter((result) => {
+        return (result.result as any) !== BigInt("0");
+      });
+      const newPools = filterIds?.map((result) => {
+        return pools.filter((pool) => {
+          pool.amount = result.result as bigint;
+          return pool.id - 1 === result.id;
+        })[0];
+      });
 
-    setPoolInvestments(newPools || []);
-  }, [data]);
+      setPoolInvestments(newPools || []);
+    } else {
+      setPoolInvestments([]);
+    }
+  }, [data, isDisconnected]);
 
   return (
     <main>
