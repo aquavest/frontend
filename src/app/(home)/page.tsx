@@ -121,16 +121,16 @@ export default function Home() {
               {/* Timeline line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"></div>
 
-              {/* Q4 2024 */}
+              {/* Q1 & Q2 2025 */}
               <div className="mb-8 flex justify-between items-center w-full right-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
                 <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
-                    Q4
+                    Q1 & Q2
                   </h3>
                 </div>
                 <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2024</h3>
+                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2025</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -158,12 +158,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Q1 & Q2 2025 */}
+              {/* Q3 & Q4 2025 */}
               <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
                 <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
-                    Q1 & Q2
+                    Q3 & Q4
                   </h3>
                 </div>
                 <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
@@ -190,16 +190,16 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Q3 & Q4 2025 */}
+              {/* Q1 & Q2 2026 */}
               <div className="mb-8 flex justify-between items-center w-full right-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
                 <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
-                    Q3 & Q4
+                    Q1 & Q2
                   </h3>
                 </div>
                 <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2025</h3>
+                  <h3 className="mb-3 font-bold text-blue-600 text-xl">2026</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />

@@ -1,6 +1,6 @@
 {
   "name": "aquavest",
-  "version": "0.10.0",
+  "version": "0.14.0",
   "description": "The project is an innovative decentralized investment platform designed for users to invest in fishing pools. Through a user-friendly dApp, investors can connect their crypto wallets and choose fishing pools based on detailed fact sheets. Users can then deposit their USDC assets to purchase ownership in these pools, tracked via FISH tokens.",
   "author": "Septian Maulana",
   "private": false,
