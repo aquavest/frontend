@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/aquavest/frontend/compare/v0.12.0...v0.13.0) (2024-10-05)
+
+
+### Features
+
+* **investments:** add wallet status to show the actual investment ([7e59f0a](https://github.com/aquavest/frontend/commit/7e59f0ae821c51eed4d96957fcd173e08892e36b))
+
 # [0.12.0](https://github.com/aquavest/frontend/compare/v0.11.0...v0.12.0) (2024-10-04)
 
 
