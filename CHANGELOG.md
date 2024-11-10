@@ -1,3 +1,10 @@
+# [0.14.0](https://github.com/aquavest/frontend/compare/v0.13.0...v0.14.0) (2024-11-10)
+
+
+### Features
+
+* **avalanche:** integrate app into avalanche testnet ([466d897](https://github.com/aquavest/frontend/commit/466d897104a8fea41e147aed0268af47d797b907))
+
 # [0.13.0](https://github.com/aquavest/frontend/compare/v0.12.0...v0.13.0) (2024-10-05)
 
 
