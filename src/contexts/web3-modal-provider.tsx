@@ -9,7 +9,7 @@ import {
   RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
 import { useTheme } from "next-themes";
-import { mainnet } from "wagmi/chains";
+import { avalancheFuji } from "wagmi/chains";
 
 import { config } from "@/configs/wagmi-config";
 
@@ -22,7 +22,7 @@ export function Web3ModalProvider({ children }: { children: React.ReactNode }) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider
-          initialChain={mainnet}
+          initialChain={avalancheFuji}
           theme={
             resolvedTheme === "dark"
               ? darkTheme({
