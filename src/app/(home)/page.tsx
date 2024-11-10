@@ -124,7 +124,7 @@ export default function Home() {
               {/* Q4 2024 */}
               <div className="mb-8 flex justify-between items-center w-full right-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
-                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
                     Q4
                   </h3>
@@ -134,7 +134,9 @@ export default function Home() {
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Smart Contract Deployment on Neo X</span>
+                      <span>
+                        Smart Contract Deployment on single Blockchain
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -142,22 +144,26 @@ export default function Home() {
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Chain Abstraction Integration</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleDot className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                       <span>Security Audits</span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>User Dashboard</span>
+                      <span>User Dashboard Setup for Multi-Chain</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Q1 2025 */}
+              {/* Q1 & Q2 2025 */}
               <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
-                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
-                    Q1
+                    Q1 & Q2
                   </h3>
                 </div>
                 <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
@@ -165,26 +171,31 @@ export default function Home() {
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>The Graph Integration</span>
+                      <span>Smart Contract Rewrite for Oracle Data Feeds</span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Oracle Integration</span>
+                      <span>
+                        Seda Oracle Integration for Real-Time Farm Metrics
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Platform Launch v1/Mainnet</span>
+                      <span>
+                        Platform Launch v1/Mainnet with Full Chain Abstraction &
+                        Oracle Integration
+                      </span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Q2 2025 */}
+              {/* Q3 & Q4 2025 */}
               <div className="mb-8 flex justify-between items-center w-full right-timeline">
                 <div className="order-1 w-5/12 hidden md:block"></div>
-                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full">
+                <div className="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-20 h-20 rounded-full">
                   <h3 className="mx-auto font-semibold text-sm text-white">
-                    Q2
+                    Q3 & Q4
                   </h3>
                 </div>
                 <div className="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
@@ -192,19 +203,28 @@ export default function Home() {
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Secondary Market Launch</span>
+                      <span>
+                        Secondary Market Launch with Cross-Chain Support
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Platform Launch v2</span>
+                      <span>
+                        Platform Launch v2 with Enhanced Multi-Chain and
+                        Oracle-Driven Features
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Market Data Visualization</span>
+                      <span>
+                        Market Data Visualization Enhanced by Seda Oracle Data
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <CircleDot className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Mini-Game App Development</span>
+                      <span>
+                        Mini-Game App Development with Real-World Data from Seda
+                      </span>
                     </li>
                   </ul>
                 </div>

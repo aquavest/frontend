@@ -6,13 +6,14 @@
 2. [Website](#website)
 3. [Project Purpose](#project-purpose)
 4. [Roadmap](#roadmap)
-5. [Prerequisites](#prerequisites)
-6. [Installation](#installation)
-7. [Running the App](#running-the-app)
-8. [Deployment](#deployment)
-9. [Contribution Guidelines](#contribution-guidelines)
-10. [License](#license)
-11. [Stay in Touch](#stay-in-touch)
+5. [Demo](#demo)
+6. [Prerequisites](#prerequisites)
+7. [Installation](#installation)
+8. [Running the App](#running-the-app)
+9. [Deployment](#deployment)
+10. [Contribution Guidelines](#contribution-guidelines)
+11. [License](#license)
+12. [Stay in Touch](#stay-in-touch)
 
 ## Description
 
@@ -47,6 +48,10 @@ With its blockchain-backed system, AquaVest ensures transparency, security, and 
 
 [Visit the live platform](https://aquavest.vercel.app/)
 
+## Demo
+
+[Visit the project demo]()
+
 ## Project Purpose
 
 AquaVest aims to provide an accessible, secure, and innovative investment channel for participating in real-world ventures like fish farming. By leveraging blockchain technology, the platform offers transparency, security, and liquidity for asset-backed investments.
@@ -57,23 +62,90 @@ AquaVest aims to provide an accessible, secure, and innovative investment channe
 
 ## Roadmap
 
-### Phase 1: Core Infrastructure and Platform Launch
+### **2024: Foundation for Chain Abstraction with Particle Network**
+  
+- **Smart Contract Deployment on Blockchain**:  
+   - **Goal**: Design smart contracts to be compatible with Particle Network’s chain abstraction, even if basic in functionality.
+   - **Tasks**:
+      - Implement initial cross-chain standards (e.g., ERC-20 for FISH tokens) to facilitate multi-chain compatibility.
+      - Prepare contracts for potential rewrites to integrate oracle calls in 2025.
+      - Consider wallet connections and cross-chain transaction flows that align with Particle Network’s structure.
 
-- **Smart Contract Deployment on Neo X:** Deploy foundational smart contracts for fish farming pool investments, ownership tracking, and profit sharing.
-- **Platform Launch:** Release the initial platform, allowing users to connect wallets, invest in tokenized fish farming pools, and track ownership through FISH tokens.
-  - **Security Audits:** Conduct thorough audits to ensure the safety of investor funds.
-  - **User Dashboard:** Develop an intuitive dashboard for investors to monitor real-time pool performance, balances, and returns.
+- **Platform Launch v0 with Particle Network Basic Integration**:  
+   - **Goal**: Launch a minimum viable product (MVP) on a single chain but establish foundational code for multi-chain support.
+   - **Tasks**:
+      - Integrate Particle Network SDK for wallet connection, enabling users to log in via social platforms and connect wallets across multiple chains.
+      - Test basic multi-chain USDC transactions to lay the groundwork for supporting investments from different chains in later versions.
+      - Create user interfaces that allow users to select a chain, showing only the current chain’s pools in this version.
+   
+- **Security Audits with Chain Abstraction in Mind**:  
+   - **Goal**: Secure the platform’s MVP with audits focused on multi-chain transactions and compatibility with Particle Network.
+   - **Tasks**:
+      - Conduct security audits for smart contract vulnerabilities, specifically focusing on wallet interactions and cross-chain payment security.
+      - Review Particle Network integration security, focusing on user data protection (e.g., social login) and seamless chain switching.
 
-### Phase 2: Data Connectivity and Blockchain Intelligence
+- **User Dashboard Setup for Multi-Chain**:  
+   - **Goal**: Create a dashboard that can eventually accommodate data from multiple chains and wallets.
+   - **Tasks**:
+      - Design the dashboard layout with multi-chain compatibility in mind, including placeholders for cross-chain asset tracking.
+      - Implement simple transaction histories and balances for each chain connected, helping users manage assets across chains in a single view.
 
-- **The Graph Integration:** Implement The Graph to enable efficient blockchain data querying and indexing, providing real-time data on pool performance, transactions, and history.
-- **Oracle Integration:** Integrate oracles to sync blockchain-based contracts with real-world data, including farm metrics, market prices, and environmental factors, ensuring accurate on-chain reflections.
+---
 
-### Phase 3: Expansion and Engagement
+### **Q1 and Q2 2025: Full Seda Oracle Integration & Smart Contract Upgrades**
 
-- **Secondary Market Launch:** Build a decentralized marketplace for trading FISH token-based ownership stakes, enhancing investor liquidity and flexibility.
-  - **Market Data Visualization:** Implement market price tracking and trend analysis tools to support informed investment and trading decisions.
-- **Mini-Game App Development:** Create a gamified mini-app to simulate fish farming or investment decision-making, engaging users and educating them about aquaculture in a fun, interactive way.
+- **Smart Contract Rewrite for Oracle Data Feeds**:  
+   - **Goal**: Integrate Seda’s oracle data into smart contracts, enabling profit calculations based on real-time metrics from fish farms.
+   - **Tasks**:
+      - Redesign smart contracts to handle data feeds from Seda, such as yield rates or environmental metrics affecting fish growth.
+      - Implement logic that uses Seda’s oracle data to dynamically update profit distributions for investors.
+      - Test cross-chain oracle data integration, ensuring compatibility with Particle Network’s chain abstraction.
+
+- **Seda Oracle Integration for Real-Time Farm Metrics**:  
+   - **Goal**: Set up Seda oracles to provide real-time data that enhances investment decisions and return calculations.
+   - **Tasks**:
+      - Integrate Seda’s API to retrieve and verify real-time data on fish farming performance and environmental metrics.
+      - Create functions within the smart contracts that update fish pool data based on Seda’s metrics, adjusting investor returns as necessary.
+      - Ensure data from Seda can be displayed in AquaVest’s user dashboard, enabling transparency.
+
+- **Platform Launch v1/Mainnet with Full Chain Abstraction & Oracle Integration**:  
+   - **Goal**: Deliver a robust mainnet launch that fully integrates chain abstraction and real-world data from oracles.
+   - **Tasks**:
+      - Launch AquaVest on mainnet with Particle Network’s chain abstraction for cross-chain wallet support and USDC transactions.
+      - Ensure cross-chain transactions and Seda data display seamlessly in the user dashboard.
+      - Conduct final security audits specifically focusing on multi-chain interactions, oracle data accuracy, and asset security.
+
+---
+
+### **Q3 and Q4 2025: Feature Expansion and User Engagement**
+
+- **Secondary Market Launch with Cross-Chain Support**:  
+   - **Goal**: Launch a secondary market for FISH tokens with full cross-chain compatibility, allowing users to trade stakes across different networks.
+   - **Tasks**:
+      - Integrate Particle Network to enable users to buy and sell FISH tokens across supported chains, increasing market liquidity.
+      - Implement features that allow users to view FISH token prices and pool performance metrics (provided by Seda) across chains.
+      - Set up cross-chain transaction flow to handle FISH token trades smoothly and securely, ensuring compatibility with both Particle and Seda’s data streams.
+
+- **Platform Launch v2 with Enhanced Multi-Chain and Oracle-Driven Features**:  
+   - **Goal**: Launch v2 with optimized multi-chain operations and refined oracle data displays.
+   - **Tasks**:
+      - Improve the cross-chain experience with Particle Network, refining wallet connections and ensuring users can seamlessly switch between chains.
+      - Integrate Seda data to power detailed pool metrics, such as yield history, farm conditions, and expected returns based on real-time data feeds.
+      - Conduct usability testing to ensure users can intuitively access cross-chain data and make investment decisions based on Seda-powered insights.
+
+- **Market Data Visualization Enhanced by Seda Oracle Data**:  
+   - **Goal**: Use data from Seda to build real-time, interactive market visualizations, giving users actionable insights into fish farming investments.
+   - **Tasks**:
+      - Design visualization tools that display Seda-sourced metrics like production yields, pond conditions, and historical profit rates for each pool.
+      - Ensure compatibility with multi-chain investments, allowing users to compare metrics across chains within one view.
+      - Include data filters and comparison features so investors can assess different fish farming pools based on Seda data.
+
+- **Mini-Game App Development with Real-World Data from Seda**:  
+   - **Goal**: Develop a mini-game app that uses Seda’s real-time data to provide an educational and engaging experience for users.
+   - **Tasks**:
+      - Build gameplay scenarios based on real-world metrics like fish growth rates or environmental conditions sourced from Seda.
+      - Integrate cross-chain rewards or collectibles within the game using Particle Network, allowing users from any supported chain to participate.
+      - Add leaderboard and achievement features to encourage engagement, showcasing players who best understand and optimize fish farming scenarios.
 
 ## Prerequisites
 
